@@ -1,0 +1,55 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Compile main.cpp",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "${cwd}/main.cpp",
+                "${cwd}/build/*.o",
+                "-o",
+                "${cwd}/main.out"
+            ],
+            
+            "problemMatcher": [
+                "$gcc"
+            ],
+            
+            "detail": "Compiles main.cpp while linking with library objects",
+            
+        },
+        
+        {
+            "label": "Compile library",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-c",
+                "./lib/*.cpp"
+            ],
+            
+            "problemMatcher": []
+
+        },
+        {
+            "label": "Build library",
+            "type": "cppbuild",
+            "command": "mv",
+            "args": [
+                "${cwd}/*.o",
+                "${cwd}/build/"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            
+            "problemMatcher": [],
+            "dependsOn":["Compile library"],
+            "detail": "Compiles libary into object files "
+
+        }
+    ],
+    "version": "2.0.0"
+}
