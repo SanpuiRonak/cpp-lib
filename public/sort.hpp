@@ -14,3 +14,8 @@ void HeapSort(std::vector<int>& arr);
  * Sorts a vector using Insertion Sort
  */
 void InsertionSort(std::vector<int>& arr);
+
+/*
+ * Sorts a vector using Insertion Sort
+ */
+void MergeSort(std::vector<int>& arr);
