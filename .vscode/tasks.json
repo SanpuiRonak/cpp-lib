@@ -25,6 +25,8 @@
             "type": "shell",
             "command": "/usr/bin/g++",
             "args": [
+                "-Wall",
+                "-Wextra",
                 "-c",
                 "./lib/*.cpp"
             ],

@@ -6,23 +6,23 @@ using namespace std;
 void benchmark(void (*func)(vector<int>&));
 
 int main() {
-    // vector<int> v = {4, 3, 2, 1, 5, 6};
-    // QuickSort(v);
+    vector<int> v = {4, 3, 2, 1, 5, 6};
+    cout << QuickSelect(v, 5) << endl;
 
     // for (int i : v) {
     //     cout << i << " ";
     // }
-    cout << "Insertion Sort:" << endl;
-    benchmark(&InsertionSort);
+    // cout << "Insertion Sort:" << endl;
+    // benchmark(&InsertionSort);
 
-    cout << "Bubble Sort:" << endl;
-    benchmark(&BubbleSort);
+    // cout << "Bubble Sort:" << endl;
+    // benchmark(&BubbleSort);
 
-    cout << "Merge Sort:" << endl;
-    benchmark(&MergeSort);
+    // cout << "Merge Sort:" << endl;
+    // benchmark(&MergeSort);
 
-    cout << "Quick Sort:" << endl;
-    benchmark(&QuickSort);
+    // cout << "Quick Sort:" << endl;
+    // benchmark(&QuickSort);
 }
 
 #define SAMPLE_SIZE 10000

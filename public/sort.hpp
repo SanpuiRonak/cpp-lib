@@ -26,7 +26,7 @@ void MergeSort(std::vector<int>& arr);
 void QuickSort(std::vector<int>& arr);
 
 /*
- * Selects Kth largest element form an vector using Quick Select
- *@returns Kth largest element
+ * Selects Kth smallest element form an vector using Quick Select
+ *@returns Kth smallest element
  */
-int QuickSelect(std::vector<int>& arr,int k);
+int QuickSelect(std::vector<int>& arr, int k);
