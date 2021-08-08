@@ -7,19 +7,19 @@ void benchmark(void (*func)(vector<int>&));
 
 int main() {
     vector<int> v = {4, 3, 2, 1, 5, 6};
-    // MergeSort(v);
+    QuickSort(v);
 
-    // for (int i : v) {
-    //     cout << i << " ";
-    // }
-    cout << "Insertion Sort:" << endl;
-    benchmark(&InsertionSort);
+    for (int i : v) {
+        cout << i << " ";
+    }
+    // cout << "Insertion Sort:" << endl;
+    // benchmark(&InsertionSort);
 
-    cout << "Bubble Sort:" << endl;
-    benchmark(&BubbleSort);
+    // cout << "Bubble Sort:" << endl;
+    // benchmark(&BubbleSort);
 
-    cout << "Merge Sort:" << endl;
-    benchmark(&MergeSort);
+    // cout << "Merge Sort:" << endl;
+    // benchmark(&MergeSort);
 }
 
 void benchmark(void (*func)(vector<int>&)) {
