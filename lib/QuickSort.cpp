@@ -19,6 +19,7 @@ int partition(std::vector<int>& arr, int i, int j) {
     int hi = j + 1;
 
     while (true) {
+
         while (arr[++i] < arr[lo])
             if (i == hi) break;
 
@@ -31,5 +32,5 @@ int partition(std::vector<int>& arr, int i, int j) {
     }
 
     std::swap(arr[lo], arr[j]);
-	return j;
+    return j;
 }

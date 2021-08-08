@@ -24,3 +24,9 @@ void MergeSort(std::vector<int>& arr);
  * Sorts a vector using Quick Sort
  */
 void QuickSort(std::vector<int>& arr);
+
+/*
+ * Selects Kth largest element form an vector using Quick Select
+ *@returns Kth largest element
+ */
+int QuickSelect(std::vector<int>& arr,int k);

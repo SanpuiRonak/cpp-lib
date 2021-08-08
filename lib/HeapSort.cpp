@@ -9,7 +9,7 @@ void sink(std::vector<int>& arr, int key, int n) {
 
         if (j < n and
             arr[j - 1] < arr[j])  // decrease index by one for 1 indexed
-            j++;  // get the greater child [only if right child exsists]
+            j++;                  // get the greater child [only if right child exsists]
 
         if (arr[key - 1] > arr[j - 1])
             break;  // break if parent already greater
