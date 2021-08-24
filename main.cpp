@@ -6,12 +6,12 @@ using namespace std;
 void benchmark(void (*func)(vector<int>&));
 
 int main() {
-    vector<int> v = {4, 3, 2, 1, 5, 6};
-    cout << QuickSelect(v, 5) << endl;
+    vector<int> v = {7, 10, 4, 3, 20, 15};
+    QuickSort(v);
 
-    // for (int i : v) {
-    //     cout << i << " ";
-    // }
+    for (int i : v) {
+        cout << i << " ";
+    }
     // cout << "Insertion Sort:" << endl;
     // benchmark(&InsertionSort);
 
@@ -25,7 +25,7 @@ int main() {
     // benchmark(&QuickSort);
 }
 
-#define SAMPLE_SIZE 10000
+#define SAMPLE_SIZE 1000000
 void benchmark(void (*func)(vector<int>&)) {
     using namespace chrono;
     cout << "Alocating vector..." << endl;
