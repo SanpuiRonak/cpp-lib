@@ -8,3 +8,5 @@
  * @retval -1 element not found
  */
 int BinarySearch(std::vector<int> ar, int key);
+
+int getPivot(std::vector<int> ar);

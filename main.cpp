@@ -1,28 +1,21 @@
 #include <bits/stdc++.h>
 
+#include "public/BST.hpp"
+#include "public/BinarySearchUtil.hpp"
+#include "public/MathUtil.hpp"
 #include "public/sort.hpp"
 
 using namespace std;
 void benchmark(void (*func)(vector<int>&));
 
 int main() {
-    vector<int> v = {7, 10, 4, 3, 20, 15};
-    QuickSort(v);
+    BST b;
+    b.insert(1, 10);
+    b.insert(2, 20);
+    b.insert(3, 30);
 
-    for (int i : v) {
-        cout << i << " ";
-    }
-    // cout << "Insertion Sort:" << endl;
-    // benchmark(&InsertionSort);
-
-    // cout << "Bubble Sort:" << endl;
-    // benchmark(&BubbleSort);
-
-    // cout << "Merge Sort:" << endl;
-    // benchmark(&MergeSort);
-
-    // cout << "Quick Sort:" << endl;
-    // benchmark(&QuickSort);
+    cout << b.ceil(2) << endl;
+    cout << b.floor(2) << endl;
 }
 
 #define SAMPLE_SIZE 1000000
