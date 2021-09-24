@@ -23,6 +23,8 @@ class BST {
     Node* max(Node* n);
     Node* floor(Node* n, int key);
     Node* ceil(Node* n, int key);
+    Node* deleteNode(Node* n, int key);
+    Node* deleteMin(Node* n);
 
    public:
     BST() = default;
@@ -32,4 +34,6 @@ class BST {
     int max();
     int floor(int key);
     int ceil(int key);
+    void deleteMin();
+    void deleteNode(int key);
 };

@@ -101,3 +101,23 @@ BST::Node* BST::floor(Node* n, int key) {
     else
         return t;
 }
+
+BST::Node* BST::deleteMin(Node* n) {
+    if (!n) {
+        return n;
+    }
+    if (!n->left) {
+        Node* t = n->right;
+        delete n;
+        return t;
+    }
+    n->left = deleteMin(n->left);
+    return n;
+}
+
+void BST::deleteMin() {
+    if (!root) {
+        throw "Empty BST Exception";
+    }
+    root = deleteMin(root);
+}

@@ -14,8 +14,8 @@ int main() {
     b.insert(2, 20);
     b.insert(3, 30);
 
-    cout << b.ceil(2) << endl;
-    cout << b.floor(2) << endl;
+    b.deleteMin();
+    cout << "ok";
 }
 
 #define SAMPLE_SIZE 1000000
