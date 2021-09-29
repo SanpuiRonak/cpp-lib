@@ -1,3 +1,4 @@
+#pragma once
 #include <stdlib.h>
 class BST {
    private:
@@ -11,7 +12,8 @@ class BST {
         Node(int key, int value) {
             this->key = key;
             this->val = value;
-            left = right = NULL;
+            left = NULL;
+            right = NULL;
         }
     };
 
@@ -27,7 +29,9 @@ class BST {
     Node* deleteMin(Node* n);
 
    public:
-    BST() = default;
+    BST() {
+        root = NULL;
+    };
     int get(int key);
     void insert(int key, int val);
     int min();

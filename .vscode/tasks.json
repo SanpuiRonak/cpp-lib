@@ -11,15 +11,11 @@
                 "-o",
                 "${cwd}/main.out"
             ],
-            
             "problemMatcher": [
                 "$gcc"
             ],
-            
             "detail": "Compiles main.cpp while linking with library objects",
-            
         },
-        
         {
             "label": "Compile library",
             "type": "shell",
@@ -30,9 +26,7 @@
                 "-c",
                 "./lib/*.cpp"
             ],
-            
             "problemMatcher": []
-
         },
         {
             "label": "Build library",
@@ -46,11 +40,11 @@
                 "kind": "build",
                 "isDefault": true
             },
-            
             "problemMatcher": [],
-            "dependsOn":["Compile library"],
+            "dependsOn": [
+                "Compile library"
+            ],
             "detail": "Compiles libary into object files "
-
         }
     ],
     "version": "2.0.0"
