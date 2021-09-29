@@ -10,12 +10,13 @@ void benchmark(void (*func)(vector<int>&));
 
 int main() {
     BST b;
-    b.insert(1, 10);
     b.insert(2, 20);
+    b.insert(1, 10);
     b.insert(3, 30);
 
-    b.deleteMin();
-    cout << "ok";
+    b.deleteNode(2);
+
+    // cout << b.ceil(1) << " " << b.floor(1);
 }
 
 #define SAMPLE_SIZE 1000000

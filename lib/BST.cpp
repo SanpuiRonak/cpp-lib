@@ -1,5 +1,7 @@
 #include "../public/BST.hpp"
 
+#include <limits.h>
+
 int BST::get(int key) {
     return get(root, key);
 }
@@ -14,6 +16,7 @@ int BST::get(Node* n, int key) {
     } else {
         return n->val;
     }
+    return INT_MIN;
 }
 
 void BST::insert(int key, int val) {
@@ -38,25 +41,27 @@ int BST::min() {
 }
 
 BST::Node* BST::min(Node* n) {
-    if (!n->left)
+    if (!n) {
+        return n;
+    } else if (!n->left)
         return n;
     else
         return min(n->left);
 }
 int BST::max() {
-    return min(root)->key;
+    return max(root)->key;
 }
 
 BST::Node* BST::max(Node* n) {
     if (!n->left)
         return n;
     else
-        return min(n->right);
+        return max(n->right);
 }
 
 int BST::ceil(int key) {
     Node* t = ceil(root, key);
-    if (!t) return NULL;
+    if (!t) return INT_MIN;
 
     return t->val;
 }
@@ -80,7 +85,7 @@ BST::Node* BST::ceil(Node* n, int key) {
 
 int BST::floor(int key) {
     Node* t = floor(root, key);
-    if (!t) return NULL;
+    if (!t) return INT_MIN;
 
     return t->val;
 }
@@ -120,4 +125,36 @@ void BST::deleteMin() {
         throw "Empty BST Exception";
     }
     root = deleteMin(root);
+}
+
+BST::Node* BST::deleteNode(Node* n, int key) {
+    if (!n) {
+        return n;
+    } else if (n->key > key) {
+        n->left = deleteNode(n->left, key);
+    } else if (n->key < key) {
+        n->right = deleteNode(n->right, key);
+    } else {
+        if (!n->left) {
+            Node* t = n->right;
+            delete n;
+            return t;
+        }
+        if (!n->right) {
+            Node* t = n->left;
+            delete n;
+            return t;
+        }
+
+        // Swap nodes value with inorder successor
+        Node* t = n;
+        n = min(t->right);
+        n->right = deleteMin(n->right);
+        n->left = t->left;
+    }
+    return n;
+}
+
+void BST::deleteNode(int key) {
+    root = deleteNode(root, key);
 }
