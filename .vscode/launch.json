@@ -22,6 +22,7 @@
                     "ignoreFailures": true
                 }
             ],
+            "miDebuggerArgs": "-q -ex quit; wait() { fg >/dev/null; }; /bin/gdb -q --interpreter=mi",
             "preLaunchTask": "Compile main.cpp",
             "miDebuggerPath": "/usr/bin/gdb"
         }
